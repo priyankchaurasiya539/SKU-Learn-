@@ -86,3 +86,5 @@ print("Writing 10,000 rows to MySQL database client...")
 df_simple.to_sql(name="inventory_metrics", con=engine, if_exists="replace", index=False)
 
 print("Done! Check your database now.")
+
+
