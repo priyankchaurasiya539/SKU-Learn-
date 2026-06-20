@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 from sklearn.model_selection import train_test_split
+import joblib
 
 # 1. Load hidden password credentials
 load_dotenv()
@@ -41,4 +42,13 @@ print(df_new)
 print("-"*100)
 print(data_pca)
 print("-"*100)
-print("All done ")
+print("All done.")
+
+
+
+#Save the pca file to joblib
+joblib.dump(data_pca , "models/data_pca.pkl")
+joblib.dump(scale_data , "models/scale_data.pkl")
+joblib.dump(pca , "models/pca.pkl")
+joblib.dump(list(df_new.columns) , "models/feature_names.pkl")
+print("Files saved in models.")
